@@ -1,0 +1,27 @@
+body {
+  background-image: url("photos/bg2.jpeg");
+  margin: 0; /* Remove default margin to extend background */
+  padding: 0; /* Remove default padding to extend background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Ensure full viewport height */
+}
+
+#main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Adjust the gap as needed */
+}
+
+.image-container {
+  width: calc(33.33% - 20px); /* Three images in a row with gap */
+  margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
