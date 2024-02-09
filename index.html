@@ -12,10 +12,18 @@
 </head>
 
 <body>
-  <header></header>
+  <div class="banner"></div>
 
+  <div class="drawer" id="myDrawer">
+    <h2>Navigation</h2>
+    <ul>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </div>
+
+  
   <div id="main">
-    <!-- Repeat the following block for each image up to 42 -->
+    <div id="menu-button" onclick="toggleDrawer()">&#9776;</div>
 
     <article class="image-container">
       <img src="./photos/01.jpg" class="image" alt="" />
@@ -285,5 +293,19 @@
   </div>
 
   <footer></footer>
+
+  <script>
+    function toggleDrawer() {
+      var drawer = document.getElementById("myDrawer");
+      var main = document.getElementById("main");
+      if (drawer.style.width === "250px") {
+        drawer.style.width = "0";
+        main.style.marginLeft = "0";
+      } else {
+        drawer.style.width = "250px";
+        main.style.marginLeft = "250px";
+      }
+    }
+  </script>
 </body>
 </html>

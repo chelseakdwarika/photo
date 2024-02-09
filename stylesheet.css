@@ -1,19 +1,86 @@
 body {
   background-image: url("photos/bg2.jpeg");
-  margin: 0; /* Remove default margin to extend background */
-  padding: 0; /* Remove default padding to extend background */
+  margin: 0; 
+  padding: 0; 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* Ensure full viewport height */
+  min-height: 100vh; 
+}
+
+.banner {
+  background-image: url("./photos/bg2.jpeg"); 
+  height: 50px; 
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+#main {
+  margin-top: 40px;
+  margin-left: 10px;
+  padding: 16px;
+  transition: margin-left 0.5s; 
+}
+
+.drawer {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  overflow-x: hidden; 
+  padding-top: 20px;
+  color: black;
+  transition: 0.5s; 
+}
+
+.drawer h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.drawer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.drawer li {
+  padding: 8px;
+  text-align: center;
+}
+
+.drawer a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.drawer a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#menu-button {
+  font-size: 45px;
+  cursor: pointer;
+  position: fixed;
+  top: 50px;
+  left: 10px;
+  z-index: 2;
 }
 
 #main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px; /* Adjust the gap as needed */
+  gap: 30px; 
 }
 
 .image-container {
@@ -25,3 +92,4 @@ body {
   width: 100%;
   height: auto;
 }
+
