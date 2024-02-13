@@ -26,7 +26,7 @@
   <div id="main">
 
     <article class="image-container">
-      <img src="./photos/01.jpg" class="image" alt="" loading="lazy" />
+      <img src="./photos/01.jpg" class="image" alt="this is a photo. this is where i took it, this is a story"  />
     </article>
 
     <article class="image-container">
@@ -292,7 +292,56 @@
 -->    
   </div>
 
+  <div class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <img class="modal-img" src="" alt="" />
+      <div class="caption"></div>
+    </div>
+  </div>
+
   <footer></footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var images = document.querySelectorAll(".image");
+      var modal = document.querySelector(".modal");
+      var modalImg = document.querySelector(".modal-img");
+      var caption = document.querySelector(".caption");
+      var closeBtn = document.querySelector(".close-btn");
+  
+      images.forEach(function (image) {
+        image.addEventListener("click", function () {
+          modal.style.display = "flex";
+          modalImg.src = this.src;
+          typeWriter(caption, this.alt); // Call the typeWriter function
+        });
+      });
+  
+      closeBtn.addEventListener("click", function () {
+        modal.style.display = "none";
+      });
+  
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+  
+      //typewriter effect
+      function typeWriter(element, text) {
+        var i = 0;
+        function type() {
+          if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, 50); // Adjust the delay between each letter
+          }
+        }
+        type();
+      }
+    });
+  </script>
 
 </body>
 </html>
